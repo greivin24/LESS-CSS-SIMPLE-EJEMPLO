@@ -1,0 +1,54 @@
+@blackColor:black;
+@whiteColor:white;
+
+@primaryColor:  rgb(48, 143, 150);
+@borderColor: rgba(5, 74, 77, 0.596);
+@borderRadius: 10px;
+@widthBox:30%;
+@heightBox: 500px;
+
+@widthImg: 300px;
+@heightImg: 100%;
+
+
+.my-mixin {
+    margin-left: 30%;
+    margin-top: 40px;
+    box-shadow: 2px 2px 0px @blackColor;
+  }
+
+
+.cuadro {
+    background-color: @primaryColor;
+    border: 1px solid @borderColor;
+    border-radius: @borderRadius;
+    height: @heightBox;
+    width: @widthBox;
+
+    .my-mixin();
+}
+
+.mixin(@color: black; @margin: 10px; @padding: 20px) {
+    color: @color;
+    margin: @margin;
+    padding: @padding;
+  }
+  .class1 {
+    .mixin(@margin: 20px; @color: white);
+  }
+
+ul{
+
+    padding: 10px;
+    list-style: none;
+  
+    li{
+      .class1();
+      margin: 10px 0;
+    }
+  }
+
+  img{
+    height: 300px;
+    width: 100%; 
+  }
